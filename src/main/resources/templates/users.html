@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <title>Таблица Пользователей</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+<h1>Таблица пользователей и их данные</h1>
+<table>
+    <thead>
+    <tr>
+        <th>id</th>
+        <th>Name</th>
+        <th>Salary</th>
+        <th>Email</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="users: ${users}">
+        <td th:text="${users.id}"></td>
+        <td th:text="${users.name}"></td>
+        <td th:text="${users.salary}"></td>
+        <td th:text="${users.email}"></td>
+    </tr>
+    </tbody>
+</table>
+<a href="http://localhost:8080/api/editor">Перейти на страницу редактирования</a>
+</body>
+
+</html>
